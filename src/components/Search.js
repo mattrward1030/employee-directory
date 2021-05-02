@@ -20,8 +20,7 @@ function Search(props) {
         <form style={styles.form}>
             <div >
                 <input style={styles.input}
-                    onChange={props.handleInputChange}
-                    value={props.search}
+                    onChange={(e) => this.searchSpace(e)}
                     name="search"
                     type="text"
                     className="form-control"
