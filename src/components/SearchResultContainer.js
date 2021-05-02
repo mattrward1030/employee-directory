@@ -32,6 +32,78 @@ class SearchResultContainer extends Component {
             });
     };
 
+    // sort by name
+    sortName() {
+        this.setState({
+            results: this.state.results.sort((a, b) => {
+                let nameA = a.name.first.toUpperCase();
+                let nameB = b.name.first.toUpperCase();
+                if (nameA < nameB) {
+                    return -1
+                }
+                if (nameA > nameB) {
+                    return 1;
+                }
+                return 0;
+
+            })
+        })
+    }
+
+    sortPhone() {
+        this.setState({
+            results: this.state.results.sort((a, b) => {
+                let phoneA = a.phone;
+                let phoneB = b.phone;
+                if (phoneA < phoneB) {
+                    return -1
+                }
+                if (phoneA > phoneB) {
+                    return 1;
+                }
+                return 0;
+
+            })
+        })
+    }
+
+    sortEmail() {
+        this.setState({
+            results: this.state.results.sort((a, b) => {
+                let emailA = a.email;
+                let emailB = b.email;
+                if (emailA < emailB) {
+                    return -1
+                }
+                if (emailA > emailB) {
+                    return 1;
+                }
+                return 0;
+
+            })
+        })
+    }
+
+    sortDob() {
+        this.setState({
+            results: this.state.results.sort((a, b) => {
+                let dobA = a.dob.date;
+                let dobB = b.dob.date;
+                if (dobA < dobB) {
+                    return -1
+                }
+                if (dobA > dobB) {
+                    return 1;
+                }
+                return 0;
+
+            })
+        })
+    }
+
+
+
+
     render() {
 
         return (
@@ -44,19 +116,23 @@ class SearchResultContainer extends Component {
                         <tr>
                             <th className="text-center scope=col">
                                 Image
-                      </th>
+                             </th>
                             <th className="text-center scope=col">
                                 Name
-                      </th>
+                                <i className="fa fa-caret-down p-2" onClick={() => this.sortName()}></i>
+                            </th>
                             <th className="text-center scope=col">
                                 Phone
-                      </th>
+                                <i className="fa fa-caret-down p-2" onClick={() => this.sortPhone()}></i>
+                            </th>
                             <th className="text-center scope=col">
                                 Email
-                      </th>
+                                <i className="fa fa-caret-down p-2" onClick={() => this.sortEmail()}></i>
+                            </th>
                             <th className="text-center scope=col">
                                 Date Of Birth
-                      </th>
+                                <i className="fa fa-caret-down p-2" onClick={() => this.sortDob()}></i>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,6 +145,8 @@ class SearchResultContainer extends Component {
                             return false;
                         })
                             .map(item => {
+                                let dobArr = item.dob.date.slice(0, -14).split("-");
+                                let newDOB = `${dobArr[1]}-${dobArr[2]}-${dobArr[0]}`;
                                 return (
                                     <ResultList
                                         picture={item.picture.medium}
@@ -76,13 +154,13 @@ class SearchResultContainer extends Component {
                                         last={item.name.last}
                                         phone={item.phone}
                                         email={item.email}
-                                        dateOfBirth={item.dob.date}
+                                        dateOfBirth={newDOB}
                                     />
                                 );
                             })}
 
                     </tbody>
-                </table>
+                </table >
             </div >
         );
     }

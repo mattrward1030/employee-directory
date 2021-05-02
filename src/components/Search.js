@@ -3,7 +3,7 @@ import React from "react";
 
 const styles = {
     form: {
-        background: "#b9b0b0c5",
+        background: "#f0f0f1",
         display: "flex",
         justifyContent: "center",
         padding: "15px"
@@ -19,7 +19,7 @@ const styles = {
 function Search(props) {
 
     return (
-        <form action="" >
+        <form>
             <div style={styles.form} >
                 <input
                     onChange={props.search}
