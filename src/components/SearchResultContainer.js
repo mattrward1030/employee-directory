@@ -6,6 +6,7 @@ import API from "../utils/API";
 class SearchResultContainer extends Component {
     constructor() {
         super();
+
         this.state = {
             search: "",
             results: []
@@ -35,7 +36,9 @@ class SearchResultContainer extends Component {
 
         return (
             <div>
-                <Search />
+                <Search
+                    search={this.searchSpace}
+                />
                 <table className="table table-striped table-hover table-light">
                     <thead className="thead-dark">
                         <tr>

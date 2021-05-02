@@ -16,13 +16,13 @@ const styles = {
 }
 
 
-function Search() {
+function Search(props) {
 
     return (
         <form action="" >
             <div style={styles.form} >
                 <input
-                    onChange={(evt) => this.searchSpace(evt)}
+                    onChange={props.search}
                     style={styles.input}
                     type="text"
                     placeholder="Search Employees"
