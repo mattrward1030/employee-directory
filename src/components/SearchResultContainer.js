@@ -9,7 +9,8 @@ class SearchResultContainer extends Component {
         super();
 
         this.state = {
-            search: null
+            search: null,
+            results: []
         };
     }
 
@@ -33,12 +34,13 @@ class SearchResultContainer extends Component {
 
     render() {
 
-        const items = API.filter((item) => {
+        const items = this.state.results.filter((item) => {
             if (this.state.search == null)
-                return item
+                return true;
             else if (item.name.first.toLowerCase().includes(this.state.search.toLowerCase()) || item.name.last.toLowerCase().includes(this.state.search.toLowerCase())) {
-                return item
+                return true;
             }
+            return false;
         }).map(item => {
 
 
