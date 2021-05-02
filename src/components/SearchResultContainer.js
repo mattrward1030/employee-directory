@@ -32,8 +32,8 @@ class SearchResultContainer extends Component {
             });
     };
 
-    // sort by name
-    sortName() {
+    // sort by name descending 
+    sortNameDown() {
         this.setState({
             results: this.state.results.sort((a, b) => {
                 let nameA = a.name.first.toUpperCase();
@@ -50,7 +50,25 @@ class SearchResultContainer extends Component {
         })
     }
 
-    sortPhone() {
+    // sort by name ascending
+    sortNameUp() {
+        this.setState({
+            results: this.state.results.sort((b, a) => {
+                let nameA = a.name.first.toUpperCase();
+                let nameB = b.name.first.toUpperCase();
+                if (nameA < nameB) {
+                    return -1
+                }
+                if (nameA > nameB) {
+                    return 1;
+                }
+                return 0;
+
+            })
+        })
+    }
+    // sort by phone descending
+    sortPhoneDown() {
         this.setState({
             results: this.state.results.sort((a, b) => {
                 let phoneA = a.phone;
@@ -67,7 +85,25 @@ class SearchResultContainer extends Component {
         })
     }
 
-    sortEmail() {
+    // sort by phone ascending
+    sortPhoneUp() {
+        this.setState({
+            results: this.state.results.sort((b, a) => {
+                let phoneA = a.phone;
+                let phoneB = b.phone;
+                if (phoneA < phoneB) {
+                    return -1
+                }
+                if (phoneA > phoneB) {
+                    return 1;
+                }
+                return 0;
+
+            })
+        })
+    }
+    // sort by email descending 
+    sortEmailDown() {
         this.setState({
             results: this.state.results.sort((a, b) => {
                 let emailA = a.email;
@@ -84,9 +120,45 @@ class SearchResultContainer extends Component {
         })
     }
 
-    sortDob() {
+    // sort by email ascending 
+    sortEmailUp() {
+        this.setState({
+            results: this.state.results.sort((b, a) => {
+                let emailA = a.email;
+                let emailB = b.email;
+                if (emailA < emailB) {
+                    return -1
+                }
+                if (emailA > emailB) {
+                    return 1;
+                }
+                return 0;
+
+            })
+        })
+    }
+    // sort by date of birth descending
+    sortDobDown() {
         this.setState({
             results: this.state.results.sort((a, b) => {
+                let dobA = a.dob.date;
+                let dobB = b.dob.date;
+                if (dobA < dobB) {
+                    return -1
+                }
+                if (dobA > dobB) {
+                    return 1;
+                }
+                return 0;
+
+            })
+        })
+    }
+
+    // sort by date of birth ascending
+    sortDobUp() {
+        this.setState({
+            results: this.state.results.sort((b, a) => {
                 let dobA = a.dob.date;
                 let dobB = b.dob.date;
                 if (dobA < dobB) {
@@ -118,20 +190,27 @@ class SearchResultContainer extends Component {
                                 Image
                              </th>
                             <th className="text-center scope=col">
+                                <i className="fa fa-caret-down p-2" onClick={() => this.sortNameDown()}></i>
                                 Name
-                                <i className="fa fa-caret-down p-2" onClick={() => this.sortName()}></i>
+                                <i className="fa fa-caret-up p-2" onClick={() => this.sortNameUp()}></i>
                             </th>
                             <th className="text-center scope=col">
+                                <i className="fa fa-caret-down p-2" onClick={() => this.sortPhoneDown()}></i>
                                 Phone
-                                <i className="fa fa-caret-down p-2" onClick={() => this.sortPhone()}></i>
+                                <i className="fa fa-caret-up p-2" onClick={() => this.sortPhoneUp()}></i>
+
                             </th>
                             <th className="text-center scope=col">
+                                <i className="fa fa-caret-down p-2" onClick={() => this.sortEmailDown()}></i>
                                 Email
-                                <i className="fa fa-caret-down p-2" onClick={() => this.sortEmail()}></i>
+                                <i className="fa fa-caret-up p-2" onClick={() => this.sortEmailUp()}></i>
+
                             </th>
                             <th className="text-center scope=col">
+                                <i className="fa fa-caret-down p-2" onClick={() => this.sortDobDown()}></i>
                                 Date Of Birth
-                                <i className="fa fa-caret-down p-2" onClick={() => this.sortDob()}></i>
+                                <i className="fa fa-caret-up p-2" onClick={() => this.sortDobUp()}></i>
+
                             </th>
                         </tr>
                     </thead>
