@@ -15,13 +15,13 @@ const styles = {
     }
 
 };
-function Search() {
+function Search(props) {
     return (
         <form style={styles.form}>
             <div >
                 <input style={styles.input}
-                    // onChange={props.handleInputChange}
-                    // value={props.search}
+                    onChange={props.handleInputChange}
+                    value={props.search}
                     name="search"
                     type="text"
                     className="form-control"
