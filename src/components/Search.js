@@ -6,32 +6,30 @@ const styles = {
         background: "#b9b0b0c5",
         display: "flex",
         justifyContent: "center",
+        padding: "15px"
     },
 
     input: {
-        width: "75%",
+        width: "20%",
         textAlign: "center",
-        margin: "10px"
     }
+}
 
-};
-function Search(props) {
+
+function Search() {
+
     return (
-        <form style={styles.form}>
-            <div >
-                <input style={styles.input}
-                    onChange={(e) => this.searchSpace(e)}
-                    name="search"
+        <form action="" >
+            <div style={styles.form} >
+                <input
+                    onChange={(evt) => this.searchSpace(evt)}
+                    style={styles.input}
                     type="text"
-                    className="form-control"
-                    placeholder="Search"
-                    id="search"
+                    placeholder="Search Employees"
                 />
             </div>
         </form>
-    );
-
+    )
 }
-
 
 export default Search;
