@@ -1,5 +1,14 @@
 import React from "react";
 
+const styles = {
+    a: {
+        color: "black",
+        textUnderlineOffset: "4px"
+    }
+
+}
+
+
 function ResultList(props) {
     return (
         <tr>
@@ -12,13 +21,13 @@ function ResultList(props) {
             <td className="text-center align-middle">
                 {props.phone}
             </td>
-            <td className="text-center align-middle">
-                <a href="mailto:someone@yoursite.com">{props.email}</a>
+            <td className="text-center align-middle links">
+                <a style={styles.a} href="mailto:someone@yoursite.com">{props.email}</a>
             </td>
             <td className="text-center align-middle">
                 {props.dateOfBirth}
             </td>
-        </tr>
+        </tr >
     )
 }
 
