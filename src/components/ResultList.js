@@ -25,8 +25,12 @@ function ResultList(props) {
                 <a style={styles.a} href="mailto:someone@yoursite.com">{props.email}</a>
             </td>
             <td className="text-center align-middle">
+                {props.city}, {props.country}
+            </td>
+            <td className="text-center align-middle">
                 {props.dateOfBirth}
             </td>
+
         </tr >
     )
 }

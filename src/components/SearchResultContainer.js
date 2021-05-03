@@ -137,6 +137,42 @@ class SearchResultContainer extends Component {
             })
         })
     }
+
+    // sort by email descending 
+    sortLocationDown() {
+        this.setState({
+            results: this.state.results.sort((a, b) => {
+                let locationA = a.location.city;
+                let locationB = b.location.city;
+                if (locationA < locationB) {
+                    return -1
+                }
+                if (locationA > locationB) {
+                    return 1;
+                }
+                return 0;
+
+            })
+        })
+    }
+
+    // sort by email ascending 
+    sortLocationUp() {
+        this.setState({
+            results: this.state.results.sort((b, a) => {
+                let locationA = a.location.city;
+                let locationB = b.location.city;
+                if (locationA < locationB) {
+                    return -1
+                }
+                if (locationA > locationB) {
+                    return 1;
+                }
+                return 0;
+
+            })
+        })
+    }
     // sort by date of birth descending
     sortDobDown() {
         this.setState({
@@ -207,11 +243,18 @@ class SearchResultContainer extends Component {
 
                             </th>
                             <th className="text-center scope=col">
+                                <i className="fa fa-caret-down p-2" onClick={() => this.sortLocationDown()}></i>
+                                Location
+                                <i className="fa fa-caret-up p-2" onClick={() => this.sortLocationUp()}></i>
+
+                            </th>
+                            <th className="text-center scope=col">
                                 <i className="fa fa-caret-down p-2" onClick={() => this.sortDobDown()}></i>
                                 Date Of Birth
                                 <i className="fa fa-caret-up p-2" onClick={() => this.sortDobUp()}></i>
 
                             </th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -226,6 +269,7 @@ class SearchResultContainer extends Component {
                             .map(item => {
                                 let dobArr = item.dob.date.slice(0, -14).split("-");
                                 let newDOB = `${dobArr[1]}-${dobArr[2]}-${dobArr[0]}`;
+
                                 return (
                                     <ResultList
                                         picture={item.picture.medium}
@@ -233,6 +277,8 @@ class SearchResultContainer extends Component {
                                         last={item.name.last}
                                         phone={item.phone}
                                         email={item.email}
+                                        city={item.location.city}
+                                        country={item.location.country}
                                         dateOfBirth={newDOB}
                                     />
                                 );
