@@ -261,9 +261,17 @@ class SearchResultContainer extends Component {
                         {this.state.results.filter((item) => {
                             if (this.state.search === "")
                                 return item;
-                            else if (item.name.first.toLowerCase().includes(this.state.search.toLowerCase()) || item.name.last.toLowerCase().includes(this.state.search.toLowerCase())) {
+                            else if (item.name.first.toLowerCase().includes(this.state.search.toLowerCase())
+                                || item.name.last.toLowerCase().includes(this.state.search.toLowerCase())
+                                || item.phone.includes(this.state.search) || item.email.includes(this.state.search)
+                                || item.location.city.includes(this.state.search)
+                                || item.location.country.includes(this.state.search)
+                                || item.dob.date.includes(this.state.search)) {
                                 return item;
                             }
+                            // else if (item.phone.includes(this.state.search)) {
+                            //     return item;
+                            // }
                             return false;
                         })
                             .map(item => {
