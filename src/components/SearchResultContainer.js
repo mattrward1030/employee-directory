@@ -269,9 +269,7 @@ class SearchResultContainer extends Component {
                                 || item.dob.date.includes(this.state.search)) {
                                 return item;
                             }
-                            // else if (item.phone.includes(this.state.search)) {
-                            //     return item;
-                            // }
+
                             return false;
                         })
                             .map(item => {
