@@ -226,32 +226,32 @@ class SearchResultContainer extends Component {
                                 Image
                              </th>
                             <th className="text-center scope=col">
-                                <i className="fa fa-caret-down p-2" onClick={() => this.sortNameDown()}></i>
+                                {/* <i className="fa fa-caret-down p-2" onClick={() => this.sortNameDown()}></i> */}
                                 Name
-                                <i className="fa fa-caret-up p-2" onClick={() => this.sortNameUp()}></i>
+                                {/* <i className="fa fa-caret-up p-2" onClick={() => this.sortNameUp()}></i> */}
                             </th>
                             <th className="text-center scope=col">
-                                <i className="fa fa-caret-down p-2" onClick={() => this.sortPhoneDown()}></i>
+                                {/* <i className="fa fa-caret-down p-2" onClick={() => this.sortPhoneDown()}></i> */}
                                 Phone
-                                <i className="fa fa-caret-up p-2" onClick={() => this.sortPhoneUp()}></i>
+                                {/* <i className="fa fa-caret-up p-2" onClick={() => this.sortPhoneUp()}></i> */}
 
                             </th>
                             <th className="text-center scope=col">
-                                <i className="fa fa-caret-down p-2" onClick={() => this.sortEmailDown()}></i>
+                                {/* <i className="fa fa-caret-down p-2" onClick={() => this.sortEmailDown()}></i> */}
                                 Email
-                                <i className="fa fa-caret-up p-2" onClick={() => this.sortEmailUp()}></i>
+                                {/* <i className="fa fa-caret-up p-2" onClick={() => this.sortEmailUp()}></i> */}
 
                             </th>
                             <th className="text-center scope=col">
-                                <i className="fa fa-caret-down p-2" onClick={() => this.sortLocationDown()}></i>
+                                {/* <i className="fa fa-caret-down p-2" onClick={() => this.sortLocationDown()}></i> */}
                                 Location
-                                <i className="fa fa-caret-up p-2" onClick={() => this.sortLocationUp()}></i>
+                                {/* <i className="fa fa-caret-up p-2" onClick={() => this.sortLocationUp()}></i> */}
 
                             </th>
                             <th className="text-center scope=col">
-                                <i className="fa fa-caret-down p-2" onClick={() => this.sortDobDown()}></i>
+                                {/* <i className="fa fa-caret-down p-2" onClick={() => this.sortDobDown()}></i> */}
                                 Date Of Birth
-                                <i className="fa fa-caret-up p-2" onClick={() => this.sortDobUp()}></i>
+                                {/* <i className="fa fa-caret-up p-2" onClick={() => this.sortDobUp()}></i> */}
 
                             </th>
 
