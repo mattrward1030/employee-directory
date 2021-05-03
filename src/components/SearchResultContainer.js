@@ -263,9 +263,10 @@ class SearchResultContainer extends Component {
                                 return item;
                             else if (item.name.first.toLowerCase().includes(this.state.search.toLowerCase())
                                 || item.name.last.toLowerCase().includes(this.state.search.toLowerCase())
-                                || item.phone.includes(this.state.search) || item.email.includes(this.state.search)
-                                || item.location.city.includes(this.state.search)
-                                || item.location.country.includes(this.state.search)
+                                || item.phone.includes(this.state.search)
+                                || item.email.toLowerCase().includes(this.state.search)
+                                || item.location.city.toLowerCase().includes(this.state.search)
+                                || item.location.country.toLowerCase().includes(this.state.search)
                                 || item.dob.date.includes(this.state.search)) {
                                 return item;
                             }
