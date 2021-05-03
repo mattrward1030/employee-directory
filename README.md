@@ -16,12 +16,12 @@ To install this repo on your local drive you would have to clone the ssh key fro
 If you want to use this program on the front end then simply click on the link in the finished project section of this read me. If you would like to experiment with the code itself and see what you can come up with, first do a git clone as previously described in the installation section. Once you have the all the folders in your vs code, make sure you do a npm install in the command line to install all the dependencies listed in the package.json. Go into the intergrated terminal and run the command npm start. This will spin up a local server enabling you to make changes in your editor of choice and see them in the browser. 
 
 ## Finished project
-<!-- Check out the live application on <a href="https://gentle-sea-15352.herokuapp.com/">Heroku!</a>
+Check out the live application on <a href=https://mattrward1030.github.io/employee-directory/>Github pages!</a>
 
-<img src="./public/assets/images/application1.png" alt="adding expense offline">
-<img src="./public/assets/images/application2.png" alt="expense added">
-<img src="./public/assets/images/application3.png" alt="going back online">
-<img src="./public/assets/images/application4.png" alt="expense showing up when back online"> -->
+<img src="./public/images/emp-dir-1.png" alt="all random employees">
+<img src="./public/images/emp-dir-2.png" alt="filter employees by name">
+<img src="./public/images/emp-dir-3.png" alt="sort employees by ascending">
+
 
 ## Features
 <ul>
@@ -37,7 +37,7 @@ If you want to use this program on the front end then simply click on the link i
 <li>Future development, this wil be part of a full MERN stack application. </li>
 <li>Will follow the MVC paradigm, react being the View that the user sees on the front end</li>
 <li>Using JSX syntax we are able to easily write front end looking code in the javascript files.</li>
-<!-- <li>Application is hosted live on <a href="https://gentle-sea-15352.herokuapp.com/">Heroku!</a>.</li> -->
+<li>Application is hosted on <a href="https://mattrward1030.github.io/employee-directory/">Github pages!</a></li>
 </ul>
 
 ## Tests
